@@ -41,5 +41,4 @@ workflows:
     jobs:
       - job3:
           requires:
-            - job1
             - job2
