@@ -26,7 +26,7 @@ jobs:
       -image: circleci/ruby:3.00
     steps:
       -checkout
-      -run
+      -run:
           name: Echo message
           command: echo "This job 3, this will run on second workflow"
 workflows:
