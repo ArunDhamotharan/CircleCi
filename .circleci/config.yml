@@ -21,14 +21,16 @@ jobs:
       - run:
           name: Echo message
           command: echo "This is job 2"
+
   job3:
     docker:
-      -image: circleci/ruby:3.00
+      - image: circleci/ruby:3.0.0
     steps:
-      -checkout
-      -run:
+      - checkout
+      - run:
           name: Echo message
           command: echo "This job 3, this will run on second workflow"
+
 workflows:
   flow1: 
     jobs:
@@ -39,4 +41,4 @@ workflows:
 
   flow2: 
     jobs:
-      -job3
+      - job3
