@@ -42,6 +42,6 @@ workflows:
   flow2: 
     requires:
       -flow1
-          jobs:
-            - job3:
+    jobs:
+      - job3:
         
