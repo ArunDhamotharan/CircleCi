@@ -35,12 +35,12 @@ workflows:
   flow1: 
     jobs:
       - job1
-      - job2
+      - job2:
           requires:
-            -job1
+            - job1
 
   flow2: 
     jobs:
-      - job3
-          #requires:
-            #- job2
+      - job3:
+          requires:
+            - job2
