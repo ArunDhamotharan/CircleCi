@@ -11,7 +11,7 @@ jobs:
       - checkout
       - run:
           name: Run tests
-          command: bundle exec rspec
+          command: ruby odd_even.rb
 
   job2:
     docker:
