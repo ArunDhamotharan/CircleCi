@@ -32,6 +32,7 @@ jobs:
           command: echo "This job 3, this will run on second workflow"
 
 workflows:
+  version: 2
   flow1: 
     jobs:
       - job1
@@ -41,6 +42,8 @@ workflows:
 
   flow2: 
     jobs:
-      - job3
-          #requires:
-            #-job2
+      - job3:
+          filters:
+            branches:
+              only:
+                - branch2
