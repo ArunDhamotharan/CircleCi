@@ -47,3 +47,5 @@ workflows:
             branches:
               only:
                 - branch2
+          context:
+            -pull-request
