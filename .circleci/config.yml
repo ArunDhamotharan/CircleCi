@@ -14,6 +14,8 @@ jobs:
           command: ruby odd_even.rb
 
   job2:
+    docker:
+      - image: circleci/ruby:3.0.0
     steps:
       - checkout
       - run:
@@ -21,13 +23,16 @@ jobs:
           command: echo "This is job 2"
 
   job3:
+    docker:
+      - image: circleci/ruby:3.0.0
     steps:
       - checkout
       - run:
           name: Echo message
-          command: echo "This job 3"
+          command: echo "This job 3, this will run on second workflow when pull request initiated on branch2"
 
 workflows:
+  version: 2
   flow1: 
     jobs:
       - job1
