@@ -29,7 +29,7 @@ jobs:
       - checkout
       - run:
           name: Echo message
-          command: echo "This job 3, this will run on second workflow when pull request initiated on branch2"
+          command: echo "This is job 3, this will run on the second workflow when a pull request is initiated on branch2"
 
 workflows:
   version: 2
