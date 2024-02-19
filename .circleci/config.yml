@@ -42,9 +42,4 @@ workflows:
   flow2:
     jobs:
       - job3:
-          filters:
-            branches:
-              only:
-                - branch2
-            tags:
-              ignore: /.*/
+          when: << pipeline.pull_request_target.branch >> == 'branch2'
