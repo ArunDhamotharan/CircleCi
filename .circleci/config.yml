@@ -43,7 +43,4 @@ workflows:
   flow2: 
     jobs:
       - job3:
-          filters:
-            branches:
-              only:
-                - branch2
+          when: << pipeline.parameters.PR_BRANCH == 'branch2' >>
