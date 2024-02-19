@@ -29,18 +29,24 @@ jobs:
       - checkout
       - run:
           name: Echo message
-          command: echo "This is job 3, this will run on the second workflow when a pull request is initiated on branch2"
+          command: echo "This job 3, this will run on the second workflow when a pull request is initiated on branch2"
 
 workflows:
   version: 2
-  flow1: 
+  flow1:
     jobs:
       - job1
       - job2:
           requires:
             - job1
-
-  flow2: 
+  flow2:
     jobs:
       - job3:
-          when: << pipeline.parameters.PR_BRANCH == 'branch2' >>
+          requires:
+            - job2
+          filters:
+            branches:
+              only:
+                - branch2
+            tags:
+              ignore: /.*/
