@@ -45,5 +45,3 @@ workflows:
          filters:
             branches:
               only: branch2
-            pull_requests:
-              types: [opened]
