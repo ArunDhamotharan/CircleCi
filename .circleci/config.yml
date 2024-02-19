@@ -42,4 +42,8 @@ workflows:
   flow2:
     jobs:
       - job3:
-          when: '\<< parameters.event == "pull_request" && parameters.branch == "branch2" >>'
+         filters:
+            branches:
+              only: branch2
+            pull_requests:
+              types: [opened]
