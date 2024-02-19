@@ -43,4 +43,4 @@ workflows:
   flow2: 
     jobs:
       - job3:
-          when: "<< pipeline.parameters.PR_BRANCH == 'branch2' >>"
+          when: "\<< pipeline.parameters.PR_BRANCH == 'branch2' \>>"
