@@ -42,5 +42,4 @@ workflows:
   flow2:
     jobs:
       - job3:
-          when: |
-            << pipeline.event == 'pull_request' && pipeline.git.branch == 'branch2' >>
+          when: '\<< parameters.event == "pull_request" && parameters.branch == "branch2" >>'
