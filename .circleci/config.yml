@@ -42,8 +42,6 @@ workflows:
   flow2:
     jobs:
       - job3:
-          requires:
-            - job2
           filters:
             branches:
               only:
