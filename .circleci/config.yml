@@ -43,4 +43,4 @@ workflows:
     jobs:
       - job3:
           when: |
-            << pipeline.pull_request >> && "${CIRCLE_PULL_REQUEST##*/}" == 'branch2'
+            << pipeline.event == 'pull_request' && pipeline.git.branch == 'branch2' >>
