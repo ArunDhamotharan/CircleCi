@@ -22,15 +22,6 @@ jobs:
           name: Echo message
           command: echo "This is job 2"
 
-  job3:
-    docker:
-      - image: circleci/ruby:3.0.0
-    steps:
-      - checkout
-      - run:
-          name: Echo message
-          command: echo "This job 3, this will run when a pull request is initiated on branch2"
-
 workflows:
   version: 2
   flow1:
@@ -39,9 +30,3 @@ workflows:
       - job2:
           requires:
             - job1
-  flow2:
-    jobs:
-      - job3:
-         filters:
-            branches:
-              only: main
