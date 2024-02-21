@@ -44,4 +44,4 @@ workflows:
       - job3:
          filters:
             branches:
-              only: main
+              only: branch2
